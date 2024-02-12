@@ -174,27 +174,6 @@ Merupakan tipe *string* yang digunakan untuk mewakili teks.
   console.log(g);
   ```
 
-- *Escape sequences* di *string literals*    
-  Merupakan urutan karakter untuk bisa menggunakan karakter yang telah
-  digunakan oleh JavaScript. Sebagai contoh 
-  seperti halnya JavaScript telah menggunakan 
-  tanda petik dua sebagai awalan dan akhiran suatu string maka dengan 
-  *escape sequences*, kita dapat menggunakan secara literal (bukan sebaga
-  penanda awalan dan akhiran string) dalam suatu string
-
-  **escape-seq.js**
-  ```js
-  let a = "\"She said \'hi\'\", he said.";
-  let b = "This is first line;\nThis is second line";
-
-  console.log(a);
-  console.log(b);
-  ```
-
-  Jika mengingat pertemuan sebelumnya terkait pembahasan Unicode, kita 
-  mengetahui untuk meng-input karakter Unicode, kita menggunakan awalan `\u`.
-  Awalan ini juga termasuk *escape sequences*.
-
 - *Template Literals*
   Serupa dengan *string literals* namun kita dapat menyediakan
   *template* dengan cara mensubstitusikan nama variable yang menyimpan 
