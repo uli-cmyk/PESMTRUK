@@ -75,16 +75,6 @@ false;      // Akan terevaluasi sebagai boolean bernilai false
 null;       // Akan terevaluasi sebagai null
 ```
 
-**primary-express-ref-to-var**
-```js
-// Tulis perintah berikut di console browser, atau node.js interactive 
-let i = 0
-let sum = 100;
-
-i;
-sum;
-undefined;
-```
 
 
 ## Operator dalam JavaScript
