@@ -135,21 +135,6 @@ Dua tambahan lagi adalah pemangkatan `**` dan perhitungan nilai sisa
   6.5 % 2.1
   ```
 
-- *Unary arithmetic operators*
-  Merupakan operator aritmatik yang memiliki satu operand (*unary*).
-  **unary-arithmetic.js**
-  ```js
-  // Jalankan program berikut di browser console atau node.js mode interactive
-  +2;
-  -2;
-
-  let i = 1, j = ++i;
-  console.log(i, j);
-
-  let n = 1, m = n++;
-  console.log(n, m);
-  ```
-
 - *Bitwise operators*
   Merupakan operator yang melakukan manipulasi bits dari representasi
   bilangan di komputer. Bilangan yang dikenai operator ini akan berubah
