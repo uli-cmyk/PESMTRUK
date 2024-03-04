@@ -328,42 +328,6 @@ di dokumentasi terkait object di
   ``` 
 
 
-- Special methods (getter and setter)   
-  Methods ini disediakan agar ketika dilakukan proses *querying* (pemanggilan
-  property) dan pengaturan nilai property dapat dimodifikasi sesuai 
-  keinginan kita.
-
-  **getter-and-setter.js**
-  ```js
-  let student = {
-    name: "Anastashia",
-    student_id: 10111047,
-    age: 22,
-
-    get name_str() {return `Student's name: ${this.name}`},
-    get age_str() { return `${this.name}'s age is ${this.age}`},
-    get student_id_str() { return `${this.name}'s student id is ${this.student_id}`},
-
-    set prop_val([new_name, new_student_id, new_age]) {
-      this.name = new_name;
-      this.student_id = new_student_id;
-      this.age = new_age;
-    }
-  }
-
-  console.log(student.name);
-  console.log(student.name_str);
-  console.log(student.student_id_str);
-  console.log(student.age_str);
-
-  console.log();
-  student.prop_val = ["Kyrlov", 10111051, 23];
-  console.log(student.name_str);
-  console.log(student.student_id_str);
-  console.log(student.age_str);
-  ```
-
-
 
 ## Tugas (Exercise - 04)
 > Laporan harus ditulis dan dikumpulkan dalam bentuk berkas 
