@@ -109,14 +109,6 @@ Ada beberapa cara untuk membuat *object*:
   // ke o1
   let o1 = Object.create({x: 1, y: 1}); 
   console.log(o1);
-
-  // Sama seperti objek o1, namun tidak memiliki property atau method
-  let o2 = Object.create(null);
-  console.log(o2);
-
-  // Sama seperti menggunakan objek literal {} atau new Object()
-  let o3 = Object.create(Object.prototype);
-  console.log(o3);
   ```
 
 
@@ -194,52 +186,17 @@ console.log("name" in student);   // => true: object student memiliki
                                   //    property name
 console.log("nim" in student);    // => false: object student tidak memiliki
                                   //    property nim
-console.log("toString" in student);   // true: object student mewarisi 
-                                      // property toString dari Object prototype
+
 
 
 console.log();
 console.log(student.hasOwnProperty("name"));
 console.log(student.hasOwnProperty("nim"));
-console.log(student.hasOwnProperty("toString"));
+console.log(student.hasOwnProperty("Anastashia"));
 
-console.log();
-console.log(student.propertyIsEnumerable("name"));
-console.log(student.propertyIsEnumerable("nim"));
-console.log(student.propertyIsEnumerable("toString"));
 
-console.log();
-console.log(student.name !== undefined);
-console.log(student.nim !== undefined);
-console.log(student.toString !== undefined);
 ```
 
-Untuk ekspresi `hasOwnProperty("toString")` 
-dan `propertyIsEnumerable("toString")` memberikan hasil yang 
-berbeda karena `toString()` bukan property yang dimiliki secara pribadi 
-oleh object student, tetapi hasil warisan dari object prototype. 
-
-## Enumerating Object
-Merupakan proses untuk meng-iterasi property suatu object menggunakan 
-control structure: `for/in`
-
-**enumerate-object.js**
-```js
-let student = {
-  name: "Anastashia",
-  nim: 10111047,
-  age: 22
-}
-
-for (let p in student) {
-  console.log(p, student[p]);
-}
-
-console.log();
-for (let p in Object.keys(student)) {      // menggunakan Object.keys()
-  console.log(p, student[p])
-}
-```
 
 ## Extending objects
 Untuk menggandakan property suatu objek ke property object lain dikenal
@@ -270,51 +227,6 @@ Object.assign(target, source);
 console.log(target);
 ```
 
-Namun contoh di atas akan meng-*overwrite* (mengganti) nilai property 
-`target` apabila property di `source` memiliki nama yang sama di `target`.
-Untuk itu diperlukan trik dengan cara membuat object kosong (`{}`) sebagai
-target dan menaruh object `target` sebaga argumen ke 3 dari `Object.assign()`
-
-**extend-object-no-overwrite.js**
-```js
-let target = {x: 1};
-let source = {x: 5, y: 2, z: 3}
-
-Object.assign(target, source);      // property x akan diganti nilainya dengan 5
-console.log(target);
-
-target = {x: 1};
-source = {x: 5, y: 2, z: 3}
-target = Object.assign({}, source, target);   // nilai x: 1 akan dipertahankan
-console.log(target);
-```
-
-
-proses *extending object* sangat sering dilakukan yang biasanya digunakan
-untuk menggandakan *default property* ke object baru yang kita buat.
-
-## Serializing objects
-Merupakan proses untuk mengubah suatu keadaan object (semua sisi kanan
-ketika kita mendeklarasikan nilai suatu object) menjadi suatu string panjang
-yang dapat kita simpan dan nantinya kita muat (*load*) ke dalam program.
-
-Proses untuk mengubah menjadi string panjang menggunakan `JSON.stringify()`
-dan untuk membacanya kembali menjadi nilai suatu object menggunakan
-`JSON.parse()` ke dalam program.
-
-**serializing-object.js**
-```js
-let o = {
-  x: 1, 
-  y: {
-    z: [false, null, ""]
-  }};
-let string_result = JSON.stringify(o);
-let parse_result = JSON.parse(string_result);
-
-console.log("string_result: ", string_result);
-console.log("parse_result: ", parse_result);
-```
 
 ## Built-in object methods
 Pada bagian ini kita akan membahas *methods* bawaan dari suatu object 
